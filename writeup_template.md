@@ -31,11 +31,9 @@ The goals / steps of this project are the following:
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-### Writeup / README
+### Writeup
 
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
-
-My project code is at [project code](https://github.com/jw2856/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+My project code is at located [here](https://github.com/jw2856/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb).
 
 ### Data Set Summary & Exploration
 
@@ -58,13 +56,13 @@ I used the code from the LeNet lab to display a random image from the dataset an
 
 I create a function to plot the distribution of labels in each of the training, validation, and test sets. The charts showed that there were some labels that were represented more heavily than others, with this distribution being roughly the same between each of the data sets.
 
-Training Set
+#### Training Set
 ![alt text][training_set_distribution]
 
-Validation Set
+#### Validation Set
 ![alt text][validation_set_distribution]
 
-Test Set
+#### Test Set
 ![alt text][test_set_distribution]
 
 ### Design and Test a Model Architecture
