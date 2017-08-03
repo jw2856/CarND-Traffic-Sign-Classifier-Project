@@ -16,9 +16,9 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [example]: ./examples/example.png "Example"
-[training_set_distribution]: ./examples/training_set_distribution "Training Set Distribution"
-[validation_set_distribution]: ./examples/validation_set_distribution "Validation Set Distribution"
-[test_set_distribution]: ./examples/test_set_distribution "Test Set Distribution"
+[training_set_distribution]: ./examples/training_set_distribution.png "Training Set Distribution"
+[validation_set_distribution]: ./examples/validation_set_distribution.png "Validation Set Distribution"
+[test_set_distribution]: ./examples/test_set_distribution.png "Test Set Distribution"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
