@@ -67,59 +67,39 @@ I create a function to plot the distribution of labels in each of the training, 
 
 ### Design and Test a Model Architecture
 
-#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+My preprocessing pipeline consisted solely of normalizing the image data to a range of -0.5 to 0.5, using the following function:
 
+```
+def normalize(data):
+    return data/255-0.5
+```
+#### Preprocessing
 
+I added grayscaling to the pipeline, adjusting the LeNet layers to handle a 1-channel image instead of 3. However, I got poorer results with the grayscaled images than I did with the color, so my final model did not include grayscaling.
 
-
-
-
-
-
-
-
-
-
-
-
-As a first step, I decided to convert the images to grayscale because ...
-
-Here is an example of a traffic sign image before and after grayscaling.
-
-![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
-
-
-#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### Model architecture
 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Convolution 3x3     	| 1x1 stride, valid padding, 28x28x6 output	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+| Max pooling	      	| 2x2 stride, valid padding, 14x14x6 output |
+| Convolution 3x3	    | 1x1 stride, valid padding, 10x10x16 output  |
+| RELU          |                       |
+| Max pooling         | 2x2 stride, valid padding, 5x5x16 output|
+| Flatten				| 400x1 output      									|
+|	Fully connected | 120x1 output |
+| RELU          |                       |
+| Dropout          |  50% keep probability  |
+| Fully connected | 84x1 output |
+| RELU          |                       |
+| Dropout          |  50% keep probability  |
+| Fully connected | 43x1 output |
 
-
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### Model Training
 
 Without any optimizations, I started with the following parameters:
 
@@ -181,27 +161,12 @@ Training Accuracy = 0.992
 Validation Accuracy = 0.941
 ```
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
-
-My best model results were:
+I ran the model a few times, and my best model results were:
 * training set accuracy of 99.7%
 * validation set accuracy of 96.0%
 * test set accuracy of 94.0%
 
-I started with the suggested LeNet architecture, with parameter settings as indicated above. From the outset, it seemed like the base architecture seemed to work decently, though did not hit the target validation accuracies for this project. When the results started to indicate that overfitting the test set might be occurring, I tried
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
-
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+I started with the suggested LeNet architecture, with parameter settings as indicated above. From the outset, it seemed like the base architecture seemed to work decently, though did not hit the target validation accuracies for this project. When the results started to indicate that overfitting the test set might be occurring, dropout was very successful, and turning up the number of epochs seemed to push me consistently past the target accuracy.
 
 ### Test a Model on New Images
 
