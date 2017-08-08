@@ -1,9 +1,5 @@
 # **Traffic Sign Recognition** 
 
----
-
-**Build a Traffic Sign Recognition Project**
-
 The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
 * Explore, summarize and visualize the data set
@@ -11,7 +7,6 @@ The goals / steps of this project are the following:
 * Use the model to make predictions on new images
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
-
 
 [//]: # (Image References)
 
@@ -26,10 +21,6 @@ The goals / steps of this project are the following:
 [image4]: ./examples/german-sign-4-23.png "Traffic Sign 4"
 [image5]: ./examples/german-sign-5-31.png "Traffic Sign 5"
 
-## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
-
----
 ### Writeup
 
 My project code is at located [here](https://github.com/jw2856/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb).
@@ -167,11 +158,9 @@ I ran the model a few times, and my best model results were:
 * validation set accuracy of 96.0%
 * test set accuracy of 94.0%
 
-I started with the suggested LeNet architecture, with parameter settings as indicated above. From the outset, it seemed like the base architecture seemed to work decently, though did not hit the target validation accuracies for this project. When the results started to indicate that overfitting the test set might be occurring, dropout was very successful, and turning up the number of epochs seemed to push me consistently past the target accuracy.
+I used with the suggested LeNet architecture, with parameter settings as indicated above. From the outset, it seemed like the base architecture seemed to work decently, though did not hit the target validation accuracies for this project. When the results started to indicate that overfitting the test set might be occurring, dropout was very successful, and turning up the number of epochs seemed to push me consistently past the target accuracy.
 
 ### Test a Model on New Images
-
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
@@ -268,6 +257,7 @@ Correct image:  Wild animals crossing (31)
 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
+
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
 
