@@ -67,13 +67,14 @@ I create a function to plot the distribution of labels in each of the training, 
 
 ### Design and Test a Model Architecture
 
+#### Preprocessing
+
 My preprocessing pipeline consisted solely of normalizing the image data to a range of -0.5 to 0.5, using the following function:
 
 ```
 def normalize(data):
     return data/255-0.5
 ```
-#### Preprocessing
 
 I added grayscaling to the pipeline, adjusting the LeNet layers to handle a 1-channel image instead of 3. However, I got poorer results with the grayscaled images than I did with the color, so my final model did not include grayscaling.
 
