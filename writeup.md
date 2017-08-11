@@ -20,14 +20,17 @@ The goals / steps of this project are the following:
 [image3]: ./examples/german-sign-3-12.png "Traffic Sign 3"
 [image4]: ./examples/german-sign-4-23.png "Traffic Sign 4"
 [image5]: ./examples/german-sign-5-31.png "Traffic Sign 5"
+[epoch-loss]: ./examples/epoch-loss.png "Epoch-Loss Graph"
 
 ### Writeup
+
+#### Code
 
 My project code is at located [here](https://github.com/jw2856/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb).
 
 ### Data Set Summary & Exploration
 
-#### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+#### 1. Data Summary
 
 I used standard python functions to calculate summary statistics of the traffic
 signs data set:
@@ -38,7 +41,7 @@ signs data set:
 * The shape of a traffic sign image is 32x32x3.
 * The number of unique classes/labels in the data set is 43.
 
-#### 2. Include an exploratory visualization of the dataset.
+#### 2. Exploratory visualization of the dataset.
 
 I used the code from the LeNet lab to display a random image from the dataset and the corresponding y value. Doing this a few times let me verify that I had properly imported the dataset and the index of each image correctly corresponded to the image's label.
 
@@ -153,16 +156,20 @@ Training Accuracy = 0.992
 Validation Accuracy = 0.941
 ```
 
-I ran the model a few times, and my best model results were:
+I trained the model a few times, and my best model results were:
 * training set accuracy of 99.7%
 * validation set accuracy of 96.0%
 * test set accuracy of 94.0%
 
 I used with the suggested LeNet architecture, with parameter settings as indicated above. From the outset, it seemed like the base architecture seemed to work decently, though did not hit the target validation accuracies for this project. When the results started to indicate that overfitting the test set might be occurring, dropout was very successful, and turning up the number of epochs seemed to push me consistently past the target accuracy.
 
+Here is a sample of an Epoch/Loss graph from one of the training runs:
+
+![alt text][epoch-loss] 
+
 ### Test a Model on New Images
 
-Here are five German traffic signs that I found on the web:
+Here are five German traffic signs that I found on the web, cropped to be square and converted to 32x32:
 
 ![alt text][image1] ![alt text][image2] ![alt text][image3] 
 ![alt text][image4] ![alt text][image5]
