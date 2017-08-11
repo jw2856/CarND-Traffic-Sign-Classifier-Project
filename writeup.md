@@ -76,17 +76,17 @@ I added grayscaling to the pipeline, adjusting the LeNet layers to handle a 1-ch
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
+| Layer             |     Description                   | 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, valid padding, 28x28x6 output	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride, valid padding, 14x14x6 output |
-| Convolution 3x3	    | 1x1 stride, valid padding, 10x10x16 output  |
+| Input             | 32x32x3 RGB image                 | 
+| Convolution 3x3       | 1x1 stride, valid padding, 28x28x6 output |
+| RELU          |                       |
+| Max pooling         | 2x2 stride, valid padding, 14x14x6 output |
+| Convolution 3x3     | 1x1 stride, valid padding, 10x10x16 output  |
 | RELU          |                       |
 | Max pooling         | 2x2 stride, valid padding, 5x5x16 output|
-| Flatten				| 400x1 output      									|
-|	Fully connected | 120x1 output |
+| Flatten       | 400x1 output                        |
+| Fully connected | 120x1 output |
 | RELU          |                       |
 | Dropout          |  50% keep probability  |
 | Fully connected | 84x1 output |
@@ -189,13 +189,13 @@ During this part of the exercise, it was also clear that properly fitting the im
 
 Here are the results of the prediction:
 
-| Image			        |     Prediction	        					| 
+| Image             |     Prediction                    | 
 |:---------------------:|:---------------------------------------------:| 
-| Speed limit (60km/h)     		| Speed limit (60km/h)  									| 
-| Yield     			| Yield										|
-| Priority road					| Priority road											|
-| Slippery road      		| Slippery road				 				|
-| Wild animals crossing			| Wild animals crossing    							|
+| Speed limit (60km/h)        | Speed limit (60km/h)                    | 
+| Yield           | Yield                   |
+| Priority road         | Priority road                     |
+| Slippery road         | Slippery road               |
+| Wild animals crossing     | Wild animals crossing                 |
 
 My final model achieved 100% on the 5 images I chose (although the initial one was at 60%).
 
@@ -205,13 +205,13 @@ My final model achieved 100% on the 5 images I chose (although the initial one w
 
 Correct image: Speed limit (60km/h) (3)
 
-| Probability         	|     Prediction	        					| 
+| Probability           |     Prediction                    | 
 |:---------------------:|:---------------------------------------------:| 
-| .52610296  			| Speed limit (60km/h) (13)								| 
-| .47328204    				| Speed limit (80km/h) (12)										|
-| .00058817				| Speed limit (50km/h) (10)									|
-| .00002117	| No passing for vehicles over 3.5 metric tons (25)	|
-| .00000348				    | Ahead only (38) 							|
+| .52610296       | Speed limit (60km/h) (13)               | 
+| .47328204           | Speed limit (80km/h) (12)                   |
+| .00058817       | Speed limit (50km/h) (10)                 |
+| .00002117 | No passing for vehicles over 3.5 metric tons (25) |
+| .00000348           | Ahead only (38)               |
 
 **Image 2**
 
@@ -262,9 +262,9 @@ Correct image:  Wild animals crossing (31)
 | .00000981       | Road narrows on the right (24) |
 | .00000163       | Slippery road (23)          |
 
+** Note: the values in the notebook may differ from the values here since I ran the training a few more times after the writeup.**
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
-
+I included a visualization of some of my network's feature maps. However, from the result, it is difficult to see the features the network is extracting. You can see a sample of the visualization in the notebook. 
 
